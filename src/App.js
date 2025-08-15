@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import EquipamentoCard from "./components/equipamentoCard";
+import { equipamentos } from "./data/equipamentos";
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        <h1>Painel de Controle</h1>
       </header>
+      <div className="panelContent">
+        {equipamentos.map((equipamento) => {
+          console.log(equipamento);
+        return <EquipamentoCard key={equipamento.id} equipamento={equipamento} />;
+        })}
+      </div>
     </div>
   );
 }
